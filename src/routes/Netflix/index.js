@@ -7,39 +7,33 @@ import Movie from './components/Movie'
 class Netflix extends Component {
 
     handleSubmit(values) {
-
-        const {dispatch} = this.props
-        dispatch(netflixSearch(values.searchString))
-
+      const {dispatch} = this.props
+      dispatch(netflixSearch(values.searchString))
     }
 
     render() {
-        const {result} = this.props.netflix
+      const {result} = this.props.netflix
 
-        return (
-            <div className="container">
-                <div className="jumbotron">
-                    <Form onSubmit={this.handleSubmit.bind(this)} />
-                </div>
-                <div className="row">
-                    { result
-                        ? <Movie props={result} />
-                        : null
-                    }
-                </div>
-                <div className="row">
-                    <h4>Output</h4>
-                    { JSON.stringify(result) }
-                </div>
+      return (
+          <div className="container">
+            <div className="jumbotron">
+              <Form onSubmit={this.handleSubmit.bind(this)} />
             </div>
-        )
-    }
+            <div className="row">
+              { result
+                ? <Movie props={result} />
+                      : null
+              }
+            </div>
+            <div className="row">
+              <h4>Output</h4>
+              { JSON.stringify(result) }
+            </div>
+          </div>
+    )
+  }
 }
 
-const mapStateToProps = state => {
-    return {
-        netflix : state.Netflix
-    }
-}
+const mapStateToProps = state => ({ netflix : state.Netflix })
 
 export default connect(mapStateToProps)(Netflix)
