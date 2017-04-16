@@ -19,29 +19,33 @@ class Spotify extends Component {
     })
   }
 
+  handleSubmit = e => {
+    e.preventDefault()
+
+    this.props.spotifySearch(this.state.searchString)
+  }
+
   render() {
-    const { result, spotifySearch } = this.props
-    const { searchString } = this.state
+    const { result } = this.props
     return (
       <div className="container">
         <div className="jumbotron">
-          <div className="col-md-6">
-            <input
-              type="text"
-              className="form-control"
-              name="searchString"
-              placeholder="Search by Artist,Track or playlist"
-              onChange={this.handleFieldChange}
-            />
-          </div>
-          <div className="row">
-            <button
-              className="btn btn-primary"
-              onClick={() => spotifySearch(searchString)}
-            >
-              Send
-            </button>
-          </div>
+          <form onSubmit={this.handleSubmit}>
+            <div className="col-md-6">
+              <input
+                type="text"
+                className="form-control"
+                name="searchString"
+                placeholder="Search by Artist,Track or playlist"
+                onChange={this.handleFieldChange}
+              />
+            </div>
+            <div className="row">
+              <button className="btn btn-primary" type="submit">
+                Send
+              </button>
+            </div>
+          </form>
         </div>
         <div className="row">
           {result ? <List props={result} /> : null}
