@@ -1,13 +1,13 @@
-import { createAction } from "redux-actions"
+import {createAction} from "redux-actions"
 import axios from "axios"
 
 const apiServer = "https://api.spotify.com/v1/search"
 
 const spotifySearchAction = query => {
   const queries = [
-    axios.get(apiServer, { params: { q: query, type: "artist" } }),
-    axios.get(apiServer, { params: { q: query, type: "track" } }),
-    axios.get(apiServer, { params: { q: query, type: "playlist" } })
+    axios.get(apiServer, {params: {q: query, type: "artist"}}),
+    axios.get(apiServer, {params: {q: query, type: "track"}}),
+    axios.get(apiServer, {params: {q: query, type: "playlist"}})
   ]
 
   return axios.all(queries).then(

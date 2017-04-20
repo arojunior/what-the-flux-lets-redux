@@ -1,8 +1,8 @@
-import React, { Component } from "react"
-import { connect } from "react-redux"
-import { bindActionCreators } from "redux"
-import * as actions from "../../modules/Spotify/actions"
-import List from "./components/List"
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+import * as actions from '../../modules/Spotify/actions'
+import List from './components/List'
 
 class Spotify extends Component {
   constructor() {
@@ -26,7 +26,7 @@ class Spotify extends Component {
   }
 
   render() {
-    const { result } = this.props
+    const {result} = this.props
     return (
       <div className="container">
         <div className="jumbotron">
@@ -48,7 +48,7 @@ class Spotify extends Component {
           </form>
         </div>
         <div className="row">
-          {result ? <List props={result} /> : null}
+          {result && <List props={result} />}
         </div>
         <div className="row">
           <h4>Output</h4>

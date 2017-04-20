@@ -1,6 +1,6 @@
 import React from "react"
 
-const Movie = ({ props }) => (
+const Movie = ({props}) => (
   <div className="col-md-12">
     <div className="col-md-6">
       <img src={props.poster} alt={props.title} className="img-responsive" />

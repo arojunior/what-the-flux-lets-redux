@@ -1,5 +1,5 @@
-import { handleAction } from "redux-actions"
-import { SPOTIFY_SEARCH } from "./actions"
+import {handleAction} from "redux-actions"
+import {SPOTIFY_SEARCH} from "./actions"
 
 const initialState = {
   result: null

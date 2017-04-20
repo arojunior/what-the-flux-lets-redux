@@ -1,8 +1,8 @@
-import React, { Component } from "react"
-import { connect } from "react-redux"
-import { netflixSearch } from "../../modules/Netflix/actions"
-import Form from "./components/Form"
-import Movie from "./components/Movie"
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import {netflixSearch} from '../../modules/Netflix/actions'
+import Form from './components/Form'
+import Movie from './components/Movie'
 
 class Netflix extends Component {
   handleSubmit(values, dispatch) {
@@ -10,7 +10,7 @@ class Netflix extends Component {
   }
 
   render() {
-    const { result } = this.props.netflix
+    const {result} = this.props.netflix
 
     return (
       <div className="container">
@@ -18,7 +18,7 @@ class Netflix extends Component {
           <Form onSubmit={this.handleSubmit.bind(this)} />
         </div>
         <div className="row">
-          {result ? <Movie props={result} /> : null}
+          {result && <Movie props={result} />}
         </div>
         <div className="row">
           <h4>Output</h4>
@@ -29,6 +29,6 @@ class Netflix extends Component {
   }
 }
 
-const mapStateToProps = state => ({ netflix: state.Netflix })
+const mapStateToProps = state => ({netflix: state.Netflix})
 
 export default connect(mapStateToProps)(Netflix)
