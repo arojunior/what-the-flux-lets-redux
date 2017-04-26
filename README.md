@@ -12,4 +12,4 @@
 * Netflix and Spotify Search
 
 ### Presentation
-[Slides](https://github.com/arojunior/what-the-flux-lets-redux/blob/master/slides.pdf)
+[Slides](https://www.slideshare.net/AntonioRobertodeOliv2/what-the-flux-lets-redux)

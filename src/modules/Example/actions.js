@@ -1,5 +1,4 @@
 import axios from 'axios'
-import {createAction} from 'redux-actions'
 
 const apiServer = 'https://api.github.com/users/'
 

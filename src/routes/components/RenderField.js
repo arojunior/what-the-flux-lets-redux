@@ -6,10 +6,11 @@ const RenderField = ({
   placeholder,
   inputClass,
   labelClass,
+  divClass,
   type,
   meta: {touched, error, warning}
 }) => (
-  <div>
+  <div className={divClass}>
     {label &&
       <div className={labelClass}>
         <label>{label}</label>
