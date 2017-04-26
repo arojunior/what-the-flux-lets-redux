@@ -1,11 +1,11 @@
 import React from 'react'
 import {Field, reduxForm} from 'redux-form'
+import renderField from 'redux-form-field-wrapper'
 
 import validate from './Validation'
-import renderField from '../../components/RenderField'
 
 const Form = props => {
-  const {handleSubmit, pristine, submitting} = props
+  const {handleSubmit, invalid, pristine, submitting} = props
 
   return (
     <form onSubmit={handleSubmit}>
@@ -21,7 +21,7 @@ const Form = props => {
       <button
         type="submit"
         className="btn btn-primary"
-        disabled={pristine || submitting}>
+        disabled={pristine || submitting || invalid}>
         Send
       </button>
     </form>
